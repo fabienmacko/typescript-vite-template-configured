@@ -4,6 +4,11 @@ import { resolve } from 'path';
 
 export default defineConfig({
   base: '/',
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src')
+    }
+  },
   build: {
     rollupOptions: {
       input: {

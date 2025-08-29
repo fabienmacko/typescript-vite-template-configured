@@ -1,6 +1,7 @@
 // vite.config.js
 import { defineConfig } from 'vite'
 import { resolve } from 'path';
+import checker from 'vite-plugin-checker';
 
 export default defineConfig({
   base: '/',
@@ -9,6 +10,11 @@ export default defineConfig({
       '@': resolve(__dirname, 'src')
     }
   },
+  plugins: [
+    checker({
+      typescript: true,
+    }),
+  ],
   build: {
     rollupOptions: {
       input: {
